@@ -22,7 +22,7 @@ public class PersonService implements CRUDRepository<Person> {
 
     @Override
     public List<Person> findAll() {
-        return null;
+        return personRepository.findAll();
     }
 
     @Override
@@ -32,7 +32,7 @@ public class PersonService implements CRUDRepository<Person> {
 
     @Override
     public Page<Person> findAll(Pageable pageable) {
-        return null;
+        return personRepository.findAll(pageable);
     }
 
     @Override
