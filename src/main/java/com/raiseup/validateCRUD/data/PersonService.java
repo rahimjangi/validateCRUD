@@ -72,7 +72,7 @@ public class PersonService implements CRUDRepository<Person> {
 
     @Override
     public <S extends Person> S save(S entity) {
-        return null;
+        return personRepository.save(entity);
     }
 
     @Override

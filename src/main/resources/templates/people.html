@@ -7,6 +7,33 @@
 </head>
 <body>
 <div class="col-8 mx-auto my-2">
+    <form th:object="${person}" method="POST" th:action="@{/people}">
+        <div class="mb-2">
+            <label for="firstname" class="form-label">First Name</label>
+            <input type="text" th:field="*{firstName}" class="form-control" id="firstname" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="lastname" class="form-label">Last Name</label>
+            <input type="text" th:field="*{lastName}" class="form-control" id="lastname" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="birthdate" class="form-label">Birthdate</label>
+            <input type="date" th:field="*{birthDate}" class="form-control" id="birthdate" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Birthdate</label>
+            <input type="email" th:field="*{email}" class="form-control" id="email" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="salary" class="form-label">Salary</label>
+            <input type="number" th:field="*{salary}" class="form-control" id="salary" aria-describedby="emailHelp">
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+
+
+    <br>
+    <br>
 <table class="table table-striped">
     <caption>List of people</caption>
     <tr>
@@ -14,6 +41,7 @@
         <th scope="col">First Name</th>
         <th scope="col">Last Name</th>
         <th scope="col">Birth Date</th>
+        <th scope="col">Email</th>
         <th scope="col">Salary</th>
     </tr>
     <tr th:each="person:${people}">
@@ -21,6 +49,7 @@
         <td th:text="${person.firstName}"></td>
         <td th:text="${person.lastName}"></td>
         <td th:text="${{person.birthDate}}"></td>
+        <td th:text="${person.email}"></td>
         <td th:text="${{person.salary}}"></td>
 
     </tr>

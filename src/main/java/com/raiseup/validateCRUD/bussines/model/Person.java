@@ -24,12 +24,15 @@ public class Person {
     @NotNull
     private LocalDate birthDate;
     @NotNull
+    private String email;
+    @NotNull
     private BigDecimal salary;
 
-    public Person(String firstName, String lastName, LocalDate birthDate, BigDecimal salary) {
+    public Person(String firstName, String lastName, LocalDate birthDate, String email, BigDecimal salary) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthDate = birthDate;
+        this.email = email;
         this.salary = salary;
     }
 }
