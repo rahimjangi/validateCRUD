@@ -44,7 +44,10 @@
         <th scope="col">Email</th>
         <th scope="col">Salary</th>
     </tr>
-    <tr th:each="person:${people}">
+    <tr th:if="${#lists.isEmpty(people)}" class="text-center">
+        <td  colspan="6">There are nothing to show!</td>
+    </tr>
+    <tr  th:each="person:${people}">
         <th scope="row" th:text="'#'+${person.id}"></th>
         <td th:text="${person.firstName}"></td>
         <td th:text="${person.lastName}"></td>
